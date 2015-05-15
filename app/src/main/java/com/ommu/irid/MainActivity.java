@@ -10,7 +10,7 @@ import android.view.MenuItem;
 import android.widget.ListView;
 
 public class MainActivity extends ActionBarActivity {
-    private FragmentNavigationDrawer dlDrawer;
+    private FragmentNavigationDrawer ommuDrawer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,17 +22,17 @@ public class MainActivity extends ActionBarActivity {
         setSupportActionBar(toolbar);
 
         // Find our drawer view
-        dlDrawer = (FragmentNavigationDrawer) findViewById(R.id.drawer_layout);
+        ommuDrawer = (FragmentNavigationDrawer) findViewById(R.id.drawer_layout);
         // Setup drawer view
-        dlDrawer.setupDrawerConfiguration((ListView) findViewById(R.id.lvDrawer), toolbar,
+        ommuDrawer.setupDrawerConfiguration((ListView) findViewById(R.id.lvDrawer), toolbar,
                 R.layout.drawer_nav_item, R.id.flContent);
         // Add nav items
-        dlDrawer.addNavItem("First", R.drawable.ic_one, "First Fragment", FirstFragment.class);
-        dlDrawer.addNavItem("Second", R.drawable.ic_two, "Second Fragment", SecondFragment.class);
-        dlDrawer.addNavItem("Third", R.drawable.ic_three, "Third Fragment", ThirdFragment.class);
+        ommuDrawer.addNavItem("First", R.drawable.ic_one, "First Fragment", FirstFragment.class);
+        ommuDrawer.addNavItem("Second", R.drawable.ic_two, "Second Fragment", SecondFragment.class);
+        ommuDrawer.addNavItem("Third", R.drawable.ic_three, "Third Fragment", ThirdFragment.class);
         // Select default
         if (savedInstanceState == null) {
-            dlDrawer.selectDrawerItem(0);
+            ommuDrawer.selectDrawerItem(0);
         }
     }
 
@@ -40,7 +40,7 @@ public class MainActivity extends ActionBarActivity {
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
         // If the nav drawer is open, hide action items related to the content
-        if (dlDrawer.isDrawerOpen()) {
+        if (ommuDrawer.isDrawerOpen()) {
             // Uncomment to hide menu items
             // menu.findItem(R.id.mi_test).setVisible(false);
         }
@@ -59,7 +59,7 @@ public class MainActivity extends ActionBarActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         // The action bar home/up action should open or close the drawer.
         // ActionBarDrawerToggle will take care of this.
-        if (dlDrawer.getDrawerToggle().onOptionsItemSelected(item)) {
+        if (ommuDrawer.getDrawerToggle().onOptionsItemSelected(item)) {
             return true;
         }
 
@@ -70,14 +70,14 @@ public class MainActivity extends ActionBarActivity {
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
         // Sync the toggle state after onRestoreInstanceState has occurred.
-        dlDrawer.getDrawerToggle().syncState();
+        ommuDrawer.getDrawerToggle().syncState();
     }
 
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         // Pass any configuration change to the drawer toggles
-        dlDrawer.getDrawerToggle().onConfigurationChanged(newConfig);
+        ommuDrawer.getDrawerToggle().onConfigurationChanged(newConfig);
     }
 
 }
