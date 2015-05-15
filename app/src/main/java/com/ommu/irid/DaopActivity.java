@@ -10,7 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-public class FirstFragment extends Fragment {
+public class DaopActivity extends Fragment {
 
 	String title, author, publisher, desc, isbn, subject, call_number, page;
 
@@ -18,7 +18,7 @@ public class FirstFragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
-		View vi = inflater.inflate(R.layout.layout_fragment_detail_info, null);
+		View vi = inflater.inflate(R.layout.daop, null);
 
 		// Log.i("item", item.author);
 		return vi;

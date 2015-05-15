@@ -27,9 +27,9 @@ public class MainActivity extends ActionBarActivity {
         ommuDrawer.setupDrawerConfiguration((ListView) findViewById(R.id.lvDrawer), toolbar,
                 R.layout.drawer_nav_item, R.id.flContent);
         // Add nav items
-        ommuDrawer.addNavItem("First", R.drawable.ic_one, "First Fragment", FirstFragment.class);
-        ommuDrawer.addNavItem("Second", R.drawable.ic_two, "Second Fragment", SecondFragment.class);
-        ommuDrawer.addNavItem("Third", R.drawable.ic_three, "Third Fragment", ThirdFragment.class);
+        ommuDrawer.addNavItem("Activity Stream", R.drawable.ic_one, "Activity Stream", WallActivity.class);
+        ommuDrawer.addNavItem("My Area", R.drawable.ic_two, "Operation Area", DaopActivity.class);
+        ommuDrawer.addNavItem("Settings", R.drawable.ic_three, "Settings", SettingsActivity.class);
         // Select default
         if (savedInstanceState == null) {
             ommuDrawer.selectDrawerItem(0);
